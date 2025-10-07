@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUMICode - AI Coding Mentor</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="#" class="logo">
+        <span class="logo-icon">⟨ \ ⟩</span>
+        <span>SUMICode</span>
+      </a>
+      <button class="icon-btn" style="border: none; padding: 0.25rem;">☰</button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-item active">
+          <a href="startpage.html" >
+             <span>Home</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Pinned</div>
+        <div class="nav-item">
+          <span>Assistant</span>
+        </div>
+        <div class="nav-item">
+          <span>All tools</span>
+        </div>
+      </div>
+      
+      <div class="nav-section-title">Creation</div>
+      <div class="nav-section">
+        <div class="nav-item">
+          <span>My creations</span>
+        </div>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="crumb">
+        <span>/</span>
+        <span class="crumb-item">Assistant</span>
+        <span>/</span>
+        <span class="crumb-item active">Code Editor</span>
+      </div>
+      <div class="top-bar-actions">
+        <button class="icon-btn">
+          History
+        </button>
+        <button class="icon-btn">
+          ✏️
+        </button>
+      </div>
+    </div>
+
+    <!-- Editor Container -->
+    <div class="editor-container">
+      <!-- HTML Editor -->
+      <div class="editor">
+        <div class="panel-header">
+          <span class="panel-title">HTML</span>
+        </div>
+        <div class="code-editor">
+          <textarea placeholder="// Write your HTML here..." id="htmlEditor"><h1>Hello World</h1></textarea>
+        </div>
+      </div>
+
+      <!-- CSS Editor -->
+      <div class="code-panel">
+        <div class="panel-header">
+          <span class="panel-title">CSS</span>
+        </div>
+        <div class="code-editor">
+          <textarea placeholder="// Write your CSS here..." id="cssEditor">h1 {
+  color: #667eea;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}</textarea>
+        </div>
+      </div>
+
+      <!-- Preview Panel -->
+      <div class="preview-panel">
+        <div class="panel-header">
+          <span class="panel-title">Preview</span>
+        </div>
+        <div class="preview-content">
+          <iframe class="preview-frame" id="preview"></iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
