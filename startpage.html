@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SumiCode</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="bg-animation">
+    <div class="gradient-orb orb1"></div>
+    <div class="gradient-orb orb2"></div>
+    <div class="gradient-orb orb3"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo"> </>SumiCode </div>
+    
+  </header>
+
+
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <h2>Everything You Need</h2>
+    <p class="features-subtitle">Learn. Code. Create. Instantly.</p>
+    
+    <div class="feature-grid">
+        <a href="#cta-section">
+      <div class="feature-card">
+        <span class="feature-icon">⚡</span>
+        <h3>Live Preview</h3>
+        <p>See your HTML & CSS changes update instantly.</p>
+      
+      </div>
+      </a>
+
+      <div class="feature-card">
+        <a href="#cta-section">
+        <span class="feature-icon">🤖</span>
+        <h3>AI Code Mentor</h3>
+        <p>Ask questions, debug, or generate designs with AI.</p>
+        </a>
+      </div>
+      
+
+      
+      <div class="feature-card">
+        <a href="#cta-section">
+        <span class="feature-icon">🔧</span>
+        <h3>Interactive Canvas</h3>
+        <p>Experiment freely and visualize your results in real time.</p>
+      </div>
+    </a>
+    </div>
+  </section>
+  <section class="cta-section" id="cta-section">
+    <div class="cta-box">
+      <h2>Welcome to SumiCode </h2>
+      <p>AI Code Mentor </p>
+      <div class="cta-buttons">
+        <a href="index.html" class="btn btn-primary">Start Building Now</a>
+        <a href="index.html" class="btn btn-secondary">Learn</a>
+      </div>
+    </div>
+  </section>
+  
+ 
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 AI SumiAI. All rights reserved. | <a href="#privacy" style="color: rgba(255,255,255,0.5)">Privacy</a> | <a href="#terms" style="color: rgba(255,255,255,0.5)">Terms</a></p>
+  </footer>
+
+  <script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Parallax effect for orbs
+    document.addEventListener('mousemove', (e) => {
+      const orbs = document.querySelectorAll('.gradient-orb');
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      
+      orbs.forEach((orb, i) => {
+        const speed = (i + 1) * 20;
+        orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+      });
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.feature-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'all 0.6s ease-out';
+      observer.observe(card);
+    });
+
+
+     
+     function scrollToSection() {
+            document.getElementById('target-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    
+  </script>
+</body>
+</html>
